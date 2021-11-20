@@ -12,7 +12,7 @@ from io import BytesIO
 import sys
 
 parser = argparse.ArgumentParser(description='')
-parser.add_argument('--dataset_path', required=False, default= './data/annotations.json', help='Path to annotations')
+parser.add_argument('--dataset_path', required=False, default= 'TACO/data/annotations.json', help='Path to annotations')
 args = parser.parse_args()
 
 dataset_dir = os.path.dirname(args.dataset_path)
@@ -20,7 +20,7 @@ dataset_dir = os.path.dirname(args.dataset_path)
 print('Note. If for any reason the connection is broken. Just call me again and I will start where I left.')
 
 # Load annotations
-with open(args.dataset_path, 'r') as f:
+with open(args.dataset_path, 'r') as f: 
     annotations = json.loads(f.read())
 
     nr_images = len(annotations['images'])
